@@ -54,5 +54,21 @@ alt="Favourite movie poster">
             <td> 4 day </td>
          </tr>
         </table>
+
+    <hr>
+        <h4> code display </h4>
+        <blockquote cite="https://stackoverflow.com/questions/73721790/how-can-i-edit-the-html-of-a-single-wordpress-post"> How can I edit the HTML of a single Wordpress post? </blockquote >
+        <a href = "https://stackoverflow.com/questions/73721790/how-can-i-edit-the-html-of-a-single-wordpress-post"> Question Link</a>
+
+        <pre>
+            <code>
+add_filter( 'post_thumbnail_html', 'remove_width_attribute', 10 );
+add_filter( 'image_send_to_editor', 'remove_width_attribute', 10 );
+function remove_width_attribute( $html ) {
+   $html = preg_replace( '/(width|height)="\d*"\s/', "", $html );
+   return $html;
+}
+            </code>
+        </pre>
     </body>
     </html>
